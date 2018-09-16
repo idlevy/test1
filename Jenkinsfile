@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh " echo ${params.param1}"
-                sh 'sed  -i  "s/ido\ 7/row\ 333/g"\ ./file1'
+                sh 'sed  -i  "s/ido\ 7/row\ 333/g" ./file1'
 
             }
         }

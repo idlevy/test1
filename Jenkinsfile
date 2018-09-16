@@ -17,8 +17,9 @@ pipeline {
                 sh '''
                   echo $version
                   new_version=$((version +1))
+                  echo $new_version
 
-                sh 'sed  -i  "s/$version/$new_version/g" ./ version'
+                sed  -i  "s/$version/$new_version/g" ./version
                 '''
             }
         }

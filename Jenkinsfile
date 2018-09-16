@@ -8,7 +8,7 @@ pipeline {
        //     description: "scale pods up or down only. no configuration update.")
        string(
            name: 'old_version',
-           defaultValue:"${new_version}",
+           defaultValue:"${1234}",
            description: ".")
 
        string(

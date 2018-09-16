@@ -10,7 +10,7 @@ pipeline {
            name: 'old_version',
            defaultValue:"${new_version}",
            description: ".")
-           }
+
        string(
            name: 'new_version',
            defaultValue:"",
@@ -39,7 +39,7 @@ pipeline {
                   new_version=$((version +1))
                   echo $new_version
 
-                sed  -i  "s/$version/$new_version/g" ./version
+              //  sed  -i  "s/$version/$new_version/g" ./version
                 '''
             }
         }

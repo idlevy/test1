@@ -14,7 +14,11 @@ pipeline {
                 //sh " echo ${params.param1}"
                 sh 'ls'
                 sh 'pwd'
-                sh 'sed  -i  "s/ido 7/row 333/g" ./file1'
+                sh '''
+                  echo $version
+                  new_version=+$version +1 
+
+                sh 'sed  -i  "s/$version/$new_version/g" ./ version'
 
             }
         }

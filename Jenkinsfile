@@ -14,12 +14,12 @@ pipeline {
                 //sh " echo ${params.param1}"
                 sh 'ls'
                 sh 'pwd'
-                sh ```
+                sh '''
                   echo $version
                   new_version=+$version +1
 
                 sh 'sed  -i  "s/$version/$new_version/g" ./ version'
-                ```
+                '''
             }
         }
         stage('Deploy') {

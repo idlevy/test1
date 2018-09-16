@@ -1,11 +1,31 @@
 pipeline {
     agent any
 
+    parameters {
+       // booleanParam(
+       //     name:'scale_only',
+       //     defaultValue:"${scale_only:"true"}",
+       //     description: "scale pods up or down only. no configuration update.")
+       string(
+           name: 'old_version',
+           defaultValue:"${new_version}",
+           description: ".")
+           }
+       string(
+           name: 'new_version',
+           defaultValue:"",
+           description: "NEW VERSION")
+           }
+
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                echo $old_verison
+                echo $new_version
                sh "env"
+
             }
         }
         stage('Test') {

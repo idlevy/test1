@@ -16,7 +16,7 @@ pipeline {
                 sh 'pwd'
                 sh '''
                   echo $version
-                  new_version=+$version +1
+                  new_version=$((version +1))
 
                 sh 'sed  -i  "s/$version/$new_version/g" ./ version'
                 '''
